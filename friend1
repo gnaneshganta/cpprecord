@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+class Number {
+private:
+    int a, b;
+
+public:
+
+    void setData(int x, int y) {
+        a = x;
+        b = y;
+    }
+
+    
+    friend int add(Number n);
+};
+
+
+int add(Number n) {
+    
+    return n.a + n.b;
+}
+
+int main() {
+    Number num;
+    num.setData(10, 20);
+
+    cout << "Sum = " << add(num) << endl;
+
+    return 0;
+}
